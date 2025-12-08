@@ -2115,6 +2115,30 @@ var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/247carbattery.com\/wp-adm
     max-width: 100%;
     height: auto !important;
 } */
+ /* Force the grid container to behave like a centered flexbox */
+.elementor-element-fa271a4 .e-con-inner {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Force the image to use its real size and center.
+   We also allow responsiveness with max-width:100% to avoid overflow. */
+.elementor-element-fa271a4 .logo-mobile img,
+.elementor-element-fa271a4 img {
+  display: block !important;
+  margin: 0 auto !important;
+
+  width: 200px !important;     /* desired exact size */
+  height: 60px !important;    /* desired exact size */
+  max-width: 100% !important;  /* scale down on small screens */
+  /* object-fit: contain !important; */
+
+  /* override any small-height rules from theme CSS */
+  min-height: 0 !important;
+  line-height: normal !important;
+}
+
 </style>
 
 </html>
