@@ -1939,22 +1939,58 @@ Get In Touch!</h2>				</div>
 		</div>		</footer>
 	</div><!-- #page -->
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const swiperWrapper = document.querySelector(".elementor-image-carousel-wrapper");
+  if (!swiperWrapper || !swiperWrapper.swiper) return;
+
+  const swiper = swiperWrapper.swiper;
+
+  function renderBrand() {
+    // Get the active slide
+    const activeSlide = swiper.slides[swiper.activeIndex];
+    if (!activeSlide) return;
+
+    // Get brand from image alt
+    const img = activeSlide.querySelector("img");
+    if (!img) return;
+
+    const brandName = img.alt
+      .replace(/logo_/gi, "")
+      .replace(/_gray_2x/gi, "")
+      .replace(/_/g, " ")
+      .toUpperCase();
+
+    // Render brand (change this target as needed)
+    document.getElementById("active-brand").innerHTML =
+      `Active Brand: <strong>${brandName}</strong>`;
+
+    console.log("Brand rendered:", brandName);
+  }
+
+  // Trigger ONLY when arrows change slide
+  swiper.on("slideChangeTransitionEnd", renderBrand);
+
+  // Initial render
+  renderBrand();
+
+});
+</script>
 
 	<script>
-
-		
 document.addEventListener("DOMContentLoaded", function () {
   new Swiper(".elementor-image-carousel-wrapper", {
-    slidesPerView: 5,
+    slidesPerView: 1,
     spaceBetween: 65,
-    loop: true,
-    speed: 3000,
+    // loop: true,
 
-    autoplay: {
-      delay: 1500,   // IMPORTANT: cannot be 0
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
+    speed: 2000, // higher = slower continuous movement
+
+    // autoplay: {
+    //   delay: 0, // MUST be 0 for continuous motion
+    //   disableOnInteraction: false,
+    // },
 
     navigation: {
       nextEl: ".elementor-swiper-button-next",
@@ -1965,6 +2001,8 @@ document.addEventListener("DOMContentLoaded", function () {
       el: ".swiper-pagination",
       clickable: true,
     },
+
+    allowTouchMove: true, // optional
 
     breakpoints: {
       0: {
@@ -1980,6 +2018,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+
 
 			<script>
 				const lazyloadRunObserver = () => {
