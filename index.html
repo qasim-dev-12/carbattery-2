@@ -2173,7 +2173,66 @@ var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/247carbattery.com\/wp-adm
 
 
 <style>
-	
+	.battery-features {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.battery-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #222;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    
+    /* animation */
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeUp 0.5s ease forwards;
+}
+
+/* stagger animation */
+.battery-features li:nth-child(1) { animation-delay: 0.1s; }
+.battery-features li:nth-child(2) { animation-delay: 0.2s; }
+.battery-features li:nth-child(3) { animation-delay: 0.3s; }
+.battery-features li:nth-child(4) { animation-delay: 0.4s; }
+.battery-features li:nth-child(5) { animation-delay: 0.5s; }
+.battery-features li:nth-child(6) { animation-delay: 0.6s; }
+
+.battery-features li:last-child {
+    border-bottom: none;
+}
+
+.battery-features .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+}
+
+.battery-features .icon img {
+    width: 18px;
+    height: 18px;
+}
+
+/* subtle hover effect */
+.battery-features li:hover {
+    transform: translateX(4px);
+    transition: transform 0.25s ease;
+}
+
+/* animation keyframes */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 	.elementor-element-bcf783a::before {
 	 background-image: url("./bg-img.png") !important;
   content: "";
