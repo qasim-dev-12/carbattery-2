@@ -2,6 +2,38 @@
 <!-- saved from url=(0026)https://247carbattery.com/ -->
 <html lang="en-US">
 	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16782231920"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16782231920');
+</script>
+<!-- Event snippet for Mobile Number Clicks on Website conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+     
+    <script>
+      (function(){
+          document.addEventListener('click', function(e){
+          if(e.target.closest('a[href^="tel:"]')){
+              gtag('event', 'conversion', {'send_to': 'AW-16782231920/MSH2COPu_58aEPCSssI-'});
+              CG.conversion();
+              initCCConvertion();
+          }
+          });
+      })();
+    </script>
+	<!-- Event snippet for Whatsapp Conversion Tracking. -->
+    <script>
+      window.addEventListener('load', function(){
+        jQuery('a[href^="https://api.whatsapp.com/\"]').click(function(){
+          gtag('event', 'conversion', {'send_to': 'AW-16782231920/MPWZCLCP858aEPCSssI-'});
+          CG.conversion();
+          initCCConvertion();
+        });
+      });
+    </script>
 	
 	
 	
